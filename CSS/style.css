@@ -1,0 +1,123 @@
+/********** General **********/
+* {
+    --montserrat-font: "Montserrat", sans-serif;
+    --containers-bg-color: #0f0f0f;
+    --containers-item-selection-color: #34333C;
+    --bg-color: #1f1f1f;
+    font-family: var(--montserrat-font);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: white;
+}
+
+::selection {
+    background-color: rgb(71, 71, 71);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    border-bottom: 1px solid black;
+}
+
+li {
+    list-style: none;
+}
+
+/********** Layout & Components **********/
+.locationInput {
+    background-color: var(--containers-item-selection-color);
+    color: white;
+    border: 1px solid #555;
+}
+
+.locationInput::placeholder {
+    color: #a0a0a0;
+}
+
+.locationInput:focus {
+    background-color: var(--containers-item-selection-color);
+    color: #fff;
+    border-color: black;
+    outline: none;
+}
+
+.currentDay .inner,
+.dayHourlyReadings,
+.daysReading {
+    background-color: var(--containers-bg-color);
+    padding: 16px;
+    --bs-border-color: #444;
+}
+/********** Forecast Card Styles **********/
+
+.daysReadingsContainer .day {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.daysReadingsContainer .date {
+    font-size: 12px;
+}
+
+.icon{
+    width: 55px;
+}
+
+.temp{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.selectedItem{
+    background-color: var(--containers-item-selection-color);
+}
+
+.navbar {
+    background: linear-gradient(90deg, #232b3a 0%, #34333C 100%);
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 1rem 2rem;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.15);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/********** Scrollable Containers **********/
+.hourlyReadingsContainer,
+.daysReadingsContainer {
+    overflow-x: auto;
+    justify-content: flex-start !important;
+    padding-bottom: 16px; /* Space between items and scrollbar */
+
+    /* -- Firefox Scrollbar -- */
+    scrollbar-width: thin;
+    scrollbar-color: #555 transparent;
+}
+
+/* -- WebKit (Chrome, Safari) Scrollbar -- */
+.hourlyReadingsContainer::-webkit-scrollbar,
+.daysReadingsContainer::-webkit-scrollbar {
+    height: 4px;
+}
+
+.hourlyReadingsContainer::-webkit-scrollbar-track,
+.daysReadingsContainer::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.hourlyReadingsContainer::-webkit-scrollbar-thumb,
+.daysReadingsContainer::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 2px;
+}
